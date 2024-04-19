@@ -35,5 +35,10 @@ public class EmployeeController {
         employeeService.createEmployee(employee);
     }
 
+    @RequestMapping(value = "/employees/{id}", method = RequestMethod.PUT)
+    public void updateEmployee(@PathVariable int id, @RequestBody Employee employee){
+        employeeService.updateEmployee(employee);
+    }
+
 
 }
