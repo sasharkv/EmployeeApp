@@ -24,6 +24,7 @@ public class EmployeeController {
 
         return employeeService.getAllEmployees();
     }
+    
 
     @RequestMapping("/employees/{id}")
     public Employee findAnEmployee(@PathVariable int id){
@@ -40,5 +41,9 @@ public class EmployeeController {
         employeeService.updateEmployee(employee);
     }
 
-
+    @RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE )
+    public List<Employee> deleteEmployee(@PathVariable int id){
+        employeeService.deleteEmployee(id);
+        return employeeService.getAllEmployees();
+    }
 }
